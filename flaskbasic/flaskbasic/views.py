@@ -5,6 +5,9 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template
 from flaskbasic import app
+from flaskbasic.content_management import Content
+
+Topic_Dict = Content()
 
 @app.route('/')
 @app.route('/home')
@@ -13,6 +16,7 @@ def home():
     return render_template(
         'index.html',
         title='Home Page',
+        a = Topic_Dict,
         year=datetime.now().year,
     )
 
@@ -35,3 +39,7 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.errorhandler(404)
+def pagenotfound(e):
+    return render_template("404.html")

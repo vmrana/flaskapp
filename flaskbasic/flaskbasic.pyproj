@@ -28,6 +28,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="flaskbasic\content_management.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="flaskbasic\__init__.py" />
     <Compile Include="flaskbasic\views.py" />
@@ -41,6 +44,7 @@
     <Folder Include="flaskbasic\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="flaskbasic\templates\404.html" />
     <Content Include="requirements.txt" />
     <Content Include="flaskbasic\static\content\bootstrap.css" />
     <Content Include="flaskbasic\static\content\bootstrap.min.css" />
